@@ -20,9 +20,15 @@ A aplicação lê as seguintes variáveis de ambiente (definidas no `application
 
 Observação: passe o valor completo do JDBC em `DATABASE_URL`. Não use literais como `{$DATABASE_URL}`.
 
+##Rodando Localmente
+Apos mudar as variaveis de ambiente no properties execute no terminal da aplicacao o seguinte comando
+
+- `mvn spring-boot:run`
+-depois acesse tambem via swagger `http://localhost:8080/swagger-ui/index.html`
+
 ## Rodando com Docker Compose
 1. Certifique-se de ter `docker` e `docker compose` instalados.
 2. No diretório do projeto (onde está `docker-compose.yaml`), execute:
    ```bash
    docker compose up --build -d
-3. A aplicação estará disponível em http://localhost:8080/swagger-ui/index.html`
+3. A aplicação estará disponível em `http://localhost:8080/swagger-ui/index.html`
