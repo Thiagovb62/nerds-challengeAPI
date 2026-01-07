@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: nerds-api
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/nerds-db
+      SPRING_DATASOURCE_USERNAME: nerds
+      SPRING_DATASOURCE_PASSWORD: nerds
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    container_name: nerds-db
+    environment:
+      POSTGRES_DB: nerds-db
+      POSTGRES_USER: nerds
+      POSTGRES_PASSWORD: nerds
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  db_data:
