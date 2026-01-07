@@ -20,7 +20,7 @@ A aplicação lê as seguintes variáveis de ambiente (definidas no `application
 
 Observação: passe o valor completo do JDBC em `DATABASE_URL`. Não use literais como `{$DATABASE_URL}`.
 
-##Rodando Localmente
+## Rodando Localmente
 Apos mudar as variaveis de ambiente no properties execute no terminal da aplicacao o seguinte comando
 
 - `mvn spring-boot:run`
